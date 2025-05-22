@@ -10,6 +10,7 @@ class ChatbotPage extends StatelessWidget {
     {"type": "user", "message": "What can you do?"},
     {"type": "bot", "message": "I can chat with you."},
   ];
+
   TextEditingController usernameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
