@@ -29,6 +29,14 @@ class _ChatbotPageState extends State<ChatbotPage> {
         ),
 
         backgroundColor: Theme.of(context).primaryColor,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/login');
+            },
+            icon: Icon(Icons.logout),
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -41,12 +49,13 @@ class _ChatbotPageState extends State<ChatbotPage> {
                     Row(
                       children: [
                         messages[index]['type'] == 'user'
-                            ? SizedBox(width: 20)
+                            ? SizedBox(width: 80)
                             : SizedBox(width: 0),
+
                         Expanded(
-                          child: Container(
+                          child: Card.outlined(
                             margin: EdgeInsets.all(10),
-                            padding: EdgeInsets.all(10),
+
                             color:
                                 messages[index]['type'] == 'user'
                                     ? Colors.blue[50]
@@ -66,11 +75,14 @@ class _ChatbotPageState extends State<ChatbotPage> {
                             ),
                           ),
                         ),
+                        messages[index]['type'] == 'bot'
+                            ? SizedBox(width: 80)
+                            : SizedBox(width: 0),
                       ],
                     ),
                     Divider(
                       color: Colors.grey,
-                      height: 1,
+                      height: 2,
                       thickness: 1,
                       indent: 10,
                       endIndent: 10,
