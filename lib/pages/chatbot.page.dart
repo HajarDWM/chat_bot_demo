@@ -32,9 +32,10 @@ class _ChatbotPageState extends State<ChatbotPage> {
         actions: [
           IconButton(
             onPressed: () {
+              Navigator.of(context).pop();
               Navigator.pushNamed(context, '/login');
             },
-            icon: Icon(Icons.logout),
+            icon: Icon(Icons.logout, color: Theme.of(context).indicatorColor),
           ),
         ],
       ),
